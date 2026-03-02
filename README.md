@@ -141,6 +141,26 @@ Installs to `./.claude/` for testing modifications before contributing.
 
 </details>
 
+<details>
+<summary><strong>Docker Installation</strong></summary>
+
+Run GSD in an isolated container with only the commands directory mapped to your host:
+
+```bash
+# Build the image
+docker build -t gsd .
+
+# Run with default settings (Claude Code, global install)
+docker compose run gsd
+
+# Override install location via environment variable
+INSTALL_LOCATION=local docker compose run gsd
+```
+
+The `docker-compose.yml` mounts `~/.claude/commands` to your host, so installed commands are available in your local Claude Code sessions. Everything else (node_modules, hooks, etc.) stays isolated inside the container.
+
+</details>
+
 ### Recommended: Skip Permissions Mode
 
 GSD is designed for frictionless automation. Run Claude Code with:
