@@ -1,0 +1,9 @@
+services:
+  gsd:
+    build: .
+    stdin_open: true
+    tty: true
+    environment:
+      - INSTALL_LOCATION=${INSTALL_LOCATION:-global}
+    volumes:
+      - ~/.claude/commands:/root/.claude/commands
