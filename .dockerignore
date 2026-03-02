@@ -1,0 +1,9 @@
+node_modules
+.git
+.claude
+coverage
+hooks/dist
+*.md
+!get-shit-done/**/*.md
+!commands/**/*.md
+!agents/**/*.md
